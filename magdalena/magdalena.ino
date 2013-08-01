@@ -144,9 +144,9 @@ void loop() {
     }
     //if speed is greater than 1 rev/second, do colors
     if(currentSpeed >= 1.0){
-      analogWrite(red, (((maxSpeed + 1.0)-currentSpeed)*MAX)/maxSpeed);
+      analogWrite(green, (((maxSpeed + 1.0)-currentSpeed)*MAX)/maxSpeed);
       analogWrite(blue, (currentSpeed*MAX)/maxSpeed);
-      analogWrite(green, OFF);
+      analogWrite(red, OFF);
     }
   }
   previousValue = currentValue;
