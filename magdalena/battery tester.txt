@@ -1,0 +1,29 @@
+for(i=1; i <= 10; i++){
+battV = calcVoltage(analogRead(A0));
+vattVInt = (int)battV;
+Vrange = battVInt - 10;
+if((battV < 10.0) || (battV > 17.0)){
+//have an error here
+}
+if(Vrange){
+if(Vrange & MaskRed){
+analogWrite(red, MAX);
+}
+if(Vrange & MaskGreen){
+analogWrite(green, MAX);
+}
+if(Vrange & MaskBlue){
+analogWrite(blue, MAX);
+}
+}
+else{
+//make chinese food
+//also define DIM in place of MAX/2
+analogWrite(red, MAX/2);
+analogWrite(green, MAX/2);
+analogWrite(blue, MAX/2);
+}
+delay(wait);
+//turn off
+delay(wait);
+}
